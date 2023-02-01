@@ -38,19 +38,21 @@ function App() {
   return (
     <>
       <section>
-        <header>
-          <h1>IP Address Tracker</h1>
-          <form onSubmit={handleSubmit}>
-            <input
-              type="text"
-              placeholder="Search for any IP address"
-              value={ipAddress}
-              onChange={(e) => setIpAddress(e.target.value)}
-            />
-            <button type="submit">
-              <LeftArrow></LeftArrow>
-            </button>
-          </form>
+        <article>
+          <header>
+            <h1>IP Address Tracker</h1>
+            <form onSubmit={handleSubmit}>
+              <input
+                type="text"
+                placeholder="Search for any IP address"
+                value={ipAddress}
+                onChange={(e) => setIpAddress(e.target.value)}
+              />
+              <button type="submit">
+                <LeftArrow></LeftArrow>
+              </button>
+            </form>
+          </header>
           {ipData && (
             <div className="data">
               <div className="data-item">
@@ -78,7 +80,8 @@ function App() {
               </div>
             </div>
           )}
-        </header>
+        </article>
+
         <MapComponent data={ipData}></MapComponent>
       </section>
     </>
