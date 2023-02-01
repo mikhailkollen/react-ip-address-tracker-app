@@ -1,38 +1,108 @@
-.App {
-  text-align: center;
+@import url("~leaflet/dist/leaflet.css");
+.leaflet-container {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+
+:root {
+  --dark-grey: hsl(0, 0%, 59%);
+  --very-dark-grey: hsl(0, 0%, 17%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  width: 20%;
+  height: 100%;
+  background-color: var(--very-dark-grey);
+  border-radius: 0px 10px 10px 0px;
+}
+
+header {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  position: absolute;
+  z-index: 4;
+  width: 100%;
+  height: 20%;
+  background-image: url(./images/pattern-bg.png);
+}
+
+header h1 {
   color: white;
+  font-weight: 500;
 }
 
-.App-link {
-  color: #61dafb;
+h2 {
+  color: var(--dark-grey);
+  font-size: 0.8rem;
+  font-weight: 500;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header form {
+  width: 40%;
+  height: 30px;
+}
+input {
+  border-radius: 10px 0px 0px 10px;
+  height: 100%;
+  width: 80%;
+  padding: 10px;
+  margin: 0;
+}
+
+.map {
+  z-index: 0;
+  position: relative;
+}
+
+.data {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  min-height: 100px;
+  padding: 20px;
+  position: absolute;
+  bottom: -50%;
+  border-radius: 10px;
+  width: 60%;
+}
+
+.data-item {
+  /* border-right: 1px solid var(--dark-grey); */
+  width: 25%;
+  padding: 10px;
+  position: relative;
+}
+
+.data-item p {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.vl {
+  border-left: 1px solid hsla(0, 0%, 59%, 0.44);
+  height: 40px;
+  position: absolute;
+  right: 0;
+  margin-left: -3px;
+  top: calc(50% - 10px);
 }
