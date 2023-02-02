@@ -4,7 +4,7 @@ import Icon from "./Icon";
 const MarkerPosition = ({ data }) => {
   let position;
   if (data) {
-    position = [data.latitude, data.longitude];
+    position = [data.location.latitude, data.location.longitude];
   }
   const map = useMap();
   useEffect(() => {
@@ -14,13 +14,7 @@ const MarkerPosition = ({ data }) => {
   }, [map, position]);
   return (
     <Marker position={position} icon={Icon}>
-      <Popup>
-        Your IP: {data.ip} <br />
-        Your location: {data.city}, {data.country}
-        <br />
-        Your ISP:
-        <br /> Your domain: <br />
-      </Popup>
+      <Popup>You are here!</Popup>
     </Marker>
   );
 };

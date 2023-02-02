@@ -5,7 +5,7 @@ import MarkerPosition from "./MarkerPosition";
 const MapComponent = ({ data }) => {
   let position;
   if (data) {
-    position = [data.latitude, data.longitude];
+    position = [data.location.latitude, data.location.longitude];
   }
 
   return (
