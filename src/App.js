@@ -6,13 +6,15 @@ import LeftArrow from "./components/LeftArrow";
 function App() {
   const [ipData, setIpData] = useState(null);
   const [ipAddress, setIpAddress] = useState("");
-  // const [dataOnSearch, setDataOnSearch] = useState({});
   useEffect(() => {
     try {
       const getInitialData = async () => {
-        const response = await fetch(
-          `https://api.ipregistry.co/?key=${process.env.REACT_APP_IP_API_KEY}`
-        );
+        const response = await fetch("https://api.ipregistry.co", {
+          method: "GET",
+          headers: {
+            Authorization: `ApiKey ${process.env.REACT_APP_IP_API_KEY}`,
+          },
+        });
         const data = await response.json();
         setIpData(data);
       };
@@ -23,12 +25,17 @@ function App() {
   }, []);
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(ipAddress);
     if (checkIfValidIP(ipAddress)) {
       try {
         const getDataOnSearch = async () => {
           const response = await fetch(
-            `https://api.ipregistry.co/${ipAddress}?key=${process.env.REACT_APP_IP_API_KEY}`
+            `https://api.ipregistry.co/${ipAddress}`,
+            {
+              method: "GET",
+              headers: {
+                Authorization: `ApiKey ${process.env.REACT_APP_IP_API_KEY}`,
+              },
+            }
           );
           const data = await response.json();
           if (data.ip) {
@@ -36,7 +43,6 @@ function App() {
           }
         };
         getDataOnSearch();
-        // console.log(ipData);
       } catch (error) {
         console.log(error);
       }
