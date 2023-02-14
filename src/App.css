@@ -17,6 +17,7 @@
   margin: 0;
   border: none;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -138,8 +139,8 @@ input {
 @media (max-width: 1000px) {
   .data {
     grid-template-columns: repeat(2, 1fr);
-    bottom: -150px;
-    bottom: -90%;
+    /* bottom: -150px;
+    bottom: -90%; */
   }
   .data-item {
     width: 50%;
@@ -149,12 +150,34 @@ input {
   }
 }
 @media (max-width: 600px) {
+  article {
+    height: 60vh;
+  }
+  article header {
+    height: 30%;
+  }
+
   .data {
     grid-template-columns: repeat(1, 1fr);
-    bottom: -90%;
+    /* bottom: -90%; */
+    height: 70%;
   }
   .data-item {
     text-align: center;
     width: 100%;
+    word-wrap: normal;
+    word-break: break-all;
+  }
+
+  .leaflet-container {
+    position: relative;
+    height: 700px;
+  }
+  header form {
+    width: 70%;
+  }
+
+  input {
+    font-size: 1rem;
   }
 }

@@ -3,21 +3,22 @@ import "./App.css";
 import MapComponent from "./components/MapComponent";
 import checkIfValidIP from "./components/checkIP";
 import LeftArrow from "./components/LeftArrow";
+
 function App() {
   const [ipData, setIpData] = useState(null);
   const [ipAddress, setIpAddress] = useState("");
+  const getInitialData = async () => {
+    const response = await fetch("https://api.ipregistry.co", {
+      method: "GET",
+      headers: {
+        Authorization: `ApiKey ${process.env.REACT_APP_IP_API_KEY}`,
+      },
+    });
+    const data = await response.json();
+    setIpData(data);
+  };
   useEffect(() => {
     try {
-      const getInitialData = async () => {
-        const response = await fetch("https://api.ipregistry.co", {
-          method: "GET",
-          headers: {
-            Authorization: `ApiKey ${process.env.REACT_APP_IP_API_KEY}`,
-          },
-        });
-        const data = await response.json();
-        setIpData(data);
-      };
       getInitialData();
     } catch (error) {
       console.log(error);
@@ -46,6 +47,8 @@ function App() {
       } catch (error) {
         console.log(error);
       }
+    } else if (checkIfValidIP(ipAddress) === "empty") {
+      getInitialData();
     } else {
       alert("Invalid IP Address");
     }
