@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-ip-address-tracker-app/static/css/main.1e028bc4.css",
+    "main.css": "/react-ip-address-tracker-app/static/css/main.764387f5.css",
     "main.js": "/react-ip-address-tracker-app/static/js/main.a1002569.js",
     "static/media/pattern-bg.png": "/react-ip-address-tracker-app/static/media/pattern-bg.a60a3c85aa8b88aac4b7.png",
     "index.html": "/react-ip-address-tracker-app/index.html",
     "static/media/icon-location.svg": "/react-ip-address-tracker-app/static/media/icon-location.7e6459d2a9278295ae782e100965be4b.svg",
-    "main.1e028bc4.css.map": "/react-ip-address-tracker-app/static/css/main.1e028bc4.css.map",
+    "main.764387f5.css.map": "/react-ip-address-tracker-app/static/css/main.764387f5.css.map",
     "main.a1002569.js.map": "/react-ip-address-tracker-app/static/js/main.a1002569.js.map"
   },
   "entrypoints": [
-    "static/css/main.1e028bc4.css",
+    "static/css/main.764387f5.css",
     "static/js/main.a1002569.js"
   ]
 }
