@@ -29,7 +29,6 @@ body {
 article {
   display: flex;
   align-items: center;
-  /* justify-content: center; */
   flex-direction: column;
   width: 100%;
   height: 30vh;
@@ -44,6 +43,11 @@ button {
   height: 100%;
   background-color: var(--very-dark-grey);
   border-radius: 0px 10px 10px 0px;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(140%);
 }
 
 header {
@@ -57,7 +61,6 @@ header {
   height: 30vh;
   background-image: url(./images/pattern-bg.png);
   background-repeat: no-repeat;
-  /* background-position: center; */
   background-size: cover;
 }
 
@@ -78,7 +81,6 @@ h2 {
 header form {
   width: 40%;
   height: 50px;
-  /* margin-bottom: 4rem; */
 }
 input {
   border-radius: 10px 0px 0px 10px;
@@ -86,6 +88,7 @@ input {
   width: 80%;
   padding: 10px;
   margin: 0;
+  font-family: "Rubik", sans-serif;
 }
 
 .map {
@@ -99,15 +102,9 @@ input {
   gap: 1rem;
   justify-content: space-between;
   background-color: white;
-  /* min-height: 150px; */
-  /* max-height: none; */
-  /* align-items: center; */
   padding: 20px;
   position: absolute;
-  /* background: transparent; */
-
   z-index: 999;
-  /* bottom: -30%; */
   border-radius: 10px;
   width: 80%;
   overflow: hidden;
@@ -120,7 +117,6 @@ input {
 .data-item {
   display: flex;
   flex-direction: column;
-  /* border-right: 1px solid var(--dark-grey); */
   padding: 10px;
   position: relative;
   padding-left: 20px;
@@ -145,8 +141,6 @@ input {
 @media (max-width: 1000px) {
   .data {
     grid-template-columns: repeat(2, 1fr);
-    /* bottom: -150px;
-    bottom: -90%; */
   }
   .data-item {
     width: 50%;
@@ -156,9 +150,6 @@ input {
   }
 }
 @media (max-width: 600px) {
-  /* article {
-    height: 30vh;
-  } */
   article header {
     height: 100%;
   }
