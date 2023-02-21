@@ -156,9 +156,9 @@ input {
   }
 }
 @media (max-width: 600px) {
-  article {
-    height: 18vh;
-  }
+  /* article {
+    height: 30vh;
+  } */
   article header {
     height: 100%;
   }
@@ -166,21 +166,24 @@ input {
   .data {
     grid-template-columns: repeat(1, 1fr);
     margin-top: 15vh;
+    max-height: 400px;
   }
   .data-item {
     text-align: center;
     width: 100%;
     word-wrap: normal;
     word-break: break-all;
+    padding: 0;
   }
 
   .leaflet-container {
     position: relative;
-    height: 82vh;
+    height: 500px;
   }
 
   header form {
     width: 70%;
+    margin-bottom: 8rem;
   }
 
   header h1 {
